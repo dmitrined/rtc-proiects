@@ -26,6 +26,9 @@ export default function Login(): JSX.Element {
 
     return (
         <div className="flex justify-center items-center min-h-[80vh] px-4">
+             <p className="text-sm text-center text-gray-500 m-4">
+                    Подсказка: <span className="font-semibold text-gray-700">emilys, emilyspass</span>
+                </p>
             <Paper elevation={3} className="p-8 w-full max-w-md dark:bg-gray-800 dark:text-white transition-colors duration-200">
                 <Typography variant="h5" component="h1" className="mb-6 text-center font-bold text-gray-800 dark:text-white">
                     Sign In
