@@ -25,7 +25,7 @@ export default function AppProducts(): JSX.Element{
           hover:border-gray-700
         "
         target="_blank"
-        href="https://github.com/dmitrined/toolkit_projects_ait/tree/main/my-toolkit/src/features/productsApp"
+        href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/productsApp"
       >
         Посмотреть код этой страницы  GitHub
       </a>

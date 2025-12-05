@@ -29,7 +29,7 @@ export const Counter = () =>{
           hover:border-gray-700
         "
         target="_blank"
-        href="https://github.com/dmitrined/toolkit_projects_ait/tree/main/my-toolkit/src/features/counter"
+        href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/counter"
       >
         Посмотреть код этой страницы  GitHub
       </a>

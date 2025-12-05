@@ -51,7 +51,7 @@ const Weather = () => {
           hover:border-gray-700
         "
         target="_blank"
-        href=""
+        href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/weather"
       >
         Посмотреть код этой страницы  GitHub
       </a>
