@@ -22,6 +22,7 @@ import Feedback from './features/reactStart/Feedback/Feedback'
 import MoviesApp from './features/reactStart/Films/Movies/MoviesApp'
 import SandwichRedux from './features/reactStart/sandwichRedux/SandwichRedux'
 import ToDoRedux from './features/reactStart/tasks/ToDoRedux'
+import TodoList from './features/reactStart/TodoList/TodoList'
 
 export default function App(): JSX.Element {
   const mode = useAppSelector((state) => state.theme.mode);
@@ -52,6 +53,7 @@ export default function App(): JSX.Element {
         <Route path="movies" element={<ProtectedRoute outlet={<MoviesApp />} />} />
         <Route path="sandwichRedux" element={<ProtectedRoute outlet={<SandwichRedux />} />} />
         <Route path="toDoRedux" element={<ProtectedRoute outlet={<ToDoRedux />} />} />
+        <Route path="todoList" element={<ProtectedRoute outlet={<TodoList />} />} />
 
 
 

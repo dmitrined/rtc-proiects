@@ -54,7 +54,7 @@ export default function Anecdotes(): JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW4/Anecdotes"
+  href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/reactStart/Anecdotes"
 >
   Посмотреть код этой страницы на GitHub
 </a>

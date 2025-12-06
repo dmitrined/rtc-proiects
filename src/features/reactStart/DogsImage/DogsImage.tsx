@@ -42,7 +42,7 @@ export default function DogsImage(): JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/Lecture/L4/DogsImage"
+  href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/reactStart/DogsImage"
 >
   Посмотреть код этой страницы на GitHub
 </a>

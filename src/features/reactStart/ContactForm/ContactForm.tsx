@@ -86,7 +86,7 @@ function ContactForm(){
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/Lecture/L7/ContactForm"
+  href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/reactStart/ContactForm"
 >
   Посмотреть код этой страницы на GitHub
 </a>

@@ -139,7 +139,7 @@ export default function TodoList(): JSX.Element {
           marginTop: "15px",
         }}
         target="_blank"
-        href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW7/TodoList"
+        href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/reactStart/TodoList"
       >
         Посмотреть код этой страницы на GitHub
       </a>

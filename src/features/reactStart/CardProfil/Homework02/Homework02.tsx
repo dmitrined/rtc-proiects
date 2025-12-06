@@ -28,7 +28,7 @@ export default function Homework02() {
           marginTop: "15px",
         }}
         target="_blank"
-        href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW2x"
+        href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/reactStart/CardProfil"
       >
         Посмотреть код этой страницы на GitHub
       </a>
