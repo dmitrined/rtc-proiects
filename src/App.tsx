@@ -21,6 +21,7 @@ import DogsImage from './features/reactStart/DogsImage/DogsImage'
 import Feedback from './features/reactStart/Feedback/Feedback'
 import MoviesApp from './features/reactStart/Films/Movies/MoviesApp'
 import SandwichRedux from './features/reactStart/sandwichRedux/SandwichRedux'
+import ToDoRedux from './features/reactStart/tasks/ToDoRedux'
 
 export default function App(): JSX.Element {
   const mode = useAppSelector((state) => state.theme.mode);
@@ -50,6 +51,7 @@ export default function App(): JSX.Element {
         <Route path="feedback" element={<ProtectedRoute outlet={<Feedback />} />} />
         <Route path="movies" element={<ProtectedRoute outlet={<MoviesApp />} />} />
         <Route path="sandwichRedux" element={<ProtectedRoute outlet={<SandwichRedux />} />} />
+        <Route path="toDoRedux" element={<ProtectedRoute outlet={<ToDoRedux />} />} />
 
 
 

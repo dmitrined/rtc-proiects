@@ -33,16 +33,9 @@ export default function NavBar(): JSX.Element {
     { name: "Feedback", to: "feedback" },
     { name: "Movies", to: "movies" },
     { name: "SandwichRedux", to: "sandwichRedux" },
+    { name: "ToDoRedux", to: "toDoRedux" },
 
 
-
-
-
-
-
-
-
-    
     { name: "ProductsList", to: "productsList" },
     { name: "UsersList", to: "usersList" },
     { name: "Counter", to: "counter" },
