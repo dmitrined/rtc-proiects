@@ -38,6 +38,7 @@ const rootReducer = combineReducers({
     movies: moviesReducer,
     sandwiches: sandwichesReducer,
     tasks: tasksReducer,
+
     // RTK Query reducers
     [weatherApi.reducerPath]: weatherApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
@@ -50,30 +51,30 @@ const persistConfig = {
     key: "root", // имя "корневого" ключа, под которым всё состояние будет храниться в storage
     // в localStorage будет ключ вроде: persist:root
     storage, // Это означает: используй localStorage браузера
-    whitelist: ["auth", "weatherState", "counter", "theme", "language"],
+    whitelist: ["auth", "weatherState", "counter", "theme", "language", "tasks"],
     // список строк с именами редьюсеров, которые нужно сохранять
     // Важно: только эти части состояния попадут в localStorage. Остальное — нет.
 };
 
 // Оборачиваем rootReducer в persistReducer
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer as any);
 
 // ---------- Создаём store ----------
 export const store = configureStore({
-    reducer: persistedReducer, // В reducer мы передаём не rootReducer, а уже обёрнутый persistedReducer
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: {
                 // Игнорируем redux-persist actions
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        })
-            .concat(weatherApi.middleware, usersApi.middleware, cryptoApi.middleware),
+        }).concat(weatherApi.middleware, usersApi.middleware, cryptoApi.middleware) as any,
 });
 
 // ---------- Создаём persistor ----------
 export const persistor = persistStore(store);
 
 // ---------- Типы для useSelector и useDispatch ----------
-export type RootState = ReturnType<typeof store.getState>;
+// Определяем RootState из rootReducer ДО применения persist
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
