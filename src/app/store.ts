@@ -1,5 +1,14 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { persistStore, persistReducer } from "redux-persist";
+import {
+    persistStore,
+    persistReducer,
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER,
+} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import productsReducer from '../features/productsApp/products/productsSlice';
 import counterReducer from '../features/counter/counterSlice';
@@ -11,6 +20,10 @@ import languageReducer from "../features/language/languageSlice";
 import { usersApi } from "../features/users/usersApi";
 import { weatherApi } from "../features/weather/weatherApi";
 import { cryptoApi } from "../features/cryptoWallet/cryptoApi";
+import dishesReducer from '../features/reactStart/dishes/dishesSlice';
+import moviesReducer from '../features/reactStart/Films/Movies/moviesSlice';
+import sandwichesReducer from '../features/reactStart/sandwichRedux/sandwichSlice';
+import tasksReducer from '../features/reactStart/tasks/TasksReduser';
 
 // ---------- Объединяем все редьюсеры ----------
 const rootReducer = combineReducers({
@@ -21,7 +34,10 @@ const rootReducer = combineReducers({
     weatherState: weatherStateReducer,
     theme: themeReducer,
     language: languageReducer,
-
+    dishes: dishesReducer,
+    movies: moviesReducer,
+    sandwiches: sandwichesReducer,
+    tasks: tasksReducer,
     // RTK Query reducers
     [weatherApi.reducerPath]: weatherApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
@@ -34,7 +50,7 @@ const persistConfig = {
     key: "root", // имя "корневого" ключа, под которым всё состояние будет храниться в storage
     // в localStorage будет ключ вроде: persist:root
     storage, // Это означает: используй localStorage браузера
-    whitelist: ["auth", "weatherState", "counter", "theme", "language", usersApi.reducerPath, weatherApi.reducerPath, cryptoApi.reducerPath],
+    whitelist: ["auth", "weatherState", "counter", "theme", "language"],
     // список строк с именами редьюсеров, которые нужно сохранять
     // Важно: только эти части состояния попадут в localStorage. Остальное — нет.
 };
@@ -49,12 +65,10 @@ export const store = configureStore({
         getDefaultMiddleware({
             serializableCheck: {
                 // Игнорируем redux-persist actions
-                ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
         })
-            .concat(weatherApi.middleware)
-            .concat(usersApi.middleware)
-            .concat(cryptoApi.middleware),
+            .concat(weatherApi.middleware, usersApi.middleware, cryptoApi.middleware),
 });
 
 // ---------- Создаём persistor ----------

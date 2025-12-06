@@ -1,0 +1,29 @@
+/* Homework02.module.css */
+
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #eaeaea;
+}
+
+.title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.profileList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Расстояние между карточками */
+}
+
+/* На мобильных устройствах или если нужна компоновка в ряд */
+@media (min-width: 768px) {
+  .profileList {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

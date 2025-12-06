@@ -1,0 +1,153 @@
+/* CSS-переменные для легкой смены темы */
+:root {
+  --primary-color: #4a90e2; /* Синий */
+  --accent-color: #e24a4a; /* Красный для удаления */
+  --bg-color: #f7f9fc; /* Светло-серый фон */
+  --card-bg: #ffffff; /* Фон карточки */
+  --border-color: #e0e6ed;
+  --text-color: #333;
+  --placeholder-color: #999;
+}
+
+.wrapper {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Форма ввода задачи */
+.form {
+  display: flex;
+  gap: 10px; /* Современный способ управления отступами между элементами */
+  margin-bottom: 15px;
+  align-items: flex-start; /* Выравнивание элементов формы по верхнему краю */
+}
+
+.input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.addButton {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.1s;
+  flex-shrink: 0; /* Не сжимать кнопку */
+}
+
+.addButton:hover {
+  background-color: #3b74b6;
+}
+
+.addButton:active {
+  transform: scale(0.98);
+}
+
+/* Сообщения об ошибках и пустом списке */
+.error {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.empty {
+  text-align: center;
+  color: var(--placeholder-color);
+  padding: 20px;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Список задач */
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s;
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.listItem:hover {
+  background-color: var(--bg-color);
+}
+
+.todoText {
+  flex-grow: 1;
+  cursor: pointer;
+  padding-right: 15px;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.4;
+  word-break: break-word; /* Для длинных задач */
+  transition: all 0.3s;
+}
+
+/* Стиль для завершенных задач */
+.completed {
+  text-decoration: line-through;
+  color: var(--placeholder-color);
+  font-style: italic;
+}
+
+/* Кнопка удаления */
+.deleteButton {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.deleteButton:hover {
+  color: #c93030;
+  transform: scale(1.1);
+}

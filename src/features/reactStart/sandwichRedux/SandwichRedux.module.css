@@ -1,0 +1,94 @@
+/* Базовые стили для контейнера всего компонента */
+.container {
+    display: flex;
+    flex-direction: column; /* По умолчанию элементы идут сверху вниз */
+    align-items: center;    /* Центрирование по горизонтали */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+.container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Стили для текстового поля (input) */
+.sandwichInput {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    font-family: monospace;
+    color: #007bff; /* Цвет текста, чтобы выделить бутерброд */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Важно для адаптивности */
+}
+
+/* Контейнер для кнопок (база: Flexbox для мобильных) */
+.btnContainer {
+    display: flex;
+    flex-direction: column; /* Стек кнопок на маленьких экранах */
+    width: 100%;
+    gap: 10px; /* Пространство между кнопками */
+}
+
+/* Стили для всех кнопок */
+.btn {
+    padding: 12px 15px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    background-color: #007bff; /* Базовый цвет */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* ------------------------------------- */
+/* Адаптация: Стили для планшетов и десктопов */
+/* При ширине экрана от 600px и выше */
+@media (min-width: 600px) {
+    
+    .container {
+        padding: 30px;
+    }
+
+    /* Используем Grid для размещения кнопок в сетке 2x2 или 4x1 */
+    .btnContainer {
+        display: grid;
+        /* Создаем 4 колонки одинаковой ширины */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 15px; /* Большее расстояние между кнопками */
+    }
+
+    /* Растягиваем кнопку "Сброс" на 4 колонки */
+    .btn:last-child {
+        grid-column: 1 / -1; /* Занимает всю ширину сетки */
+        background-color: #dc3545; /* Другой цвет для сброса */
+    }
+
+    .btn:last-child:hover {
+        background-color: #c82333;
+    }
+}
+
+/* Дополнительная адаптация для очень больших экранов */
+@media (min-width: 900px) {
+    .container {
+        max-width: 700px; /* Ограничиваем ширину, чтобы не растягивалось слишком сильно */
+    }
+}

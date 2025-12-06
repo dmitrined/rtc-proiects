@@ -1,0 +1,239 @@
+/*
+======================================================
+--- Глобальные переменные и основной контейнер 
+======================================================
+*/
+.container {
+    --primary-color: #61dafb; /* Цвет акцента (React blue) */
+    --background-dark: #3d424c; /* Основной темный фон */
+    --card-background: #525e7a; /* Фон карточек и секций */
+    --text-light: #ffffff;
+    --text-secondary: #a9a9a9;
+    --error-red: #ff5555;
+    --border-radius: 12px;
+    --task-item-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-family: "Inter", sans-serif;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--card-background);
+    padding-bottom: 15px;
+}
+
+
+/*
+======================================================
+--- Секция создания задачи (TaskCreation) ---
+======================================================
+*/
+.creationSection {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background-color: #20232a;
+    color: var(--text-light);
+    transition: border-color 0.3s;
+}
+
+.form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form button {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    flex-shrink: 0;
+}
+
+.form button:hover {
+    background-color: #38a1db;
+}
+
+.form button:active {
+    transform: scale(0.98);
+}
+
+.form button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+
+/*
+======================================================
+--- Секция задач (Tasks) ---
+======================================================
+*/
+.tasksSection h1 {
+    margin-top: 0;
+}
+
+.taskList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Элемент задачи (карточка) */
+.taskItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    border: 1px solid #444957;
+    box-shadow: var(--task-item-shadow);
+    transition: all 0.3s ease;
+     
+}
+
+.taskItem:hover {
+    background-color: #444957;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+
+.taskContent {
+     overflow-y: auto; 
+  box-sizing: border-box;
+    flex-grow: 1; 
+    flex-direction: column; 
+}
+
+.taskContent .title {
+    font-size: 1.2em; /* Добавлено явное указание размера */
+    font-weight: bold;
+    color: var(--text-light);
+    margin-bottom: 3px;
+}
+
+.taskContent .description {
+    color: var(--text-secondary);
+}
+
+/* Стили для выполненной задачи */
+.done {
+    opacity: 0.8;
+    background-color: #31353e;
+}
+
+.done .taskContent .title,
+.done .taskContent .description {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+}
+
+
+/*
+======================================================
+--- Иконки (CheckBox/Delete) ---
+======================================================
+*/
+.iconButton {
+    cursor: pointer;
+    transition: color 0.2s, transform 0.1s;
+    font-size: 26px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Предотвращаем сжатие иконок */
+}
+
+.iconButton svg {
+    font-size: 26px !important; /* Применяем размер к самой иконке MUI */
+}
+
+/* Иконка статуса */
+.checkboxIcon {
+    color: var(--primary-color);
+}
+
+/* Иконка удаления */
+.deleteIcon {
+    color: var(--text-secondary);
+}
+
+.deleteIcon:hover {
+    color: var(--error-red);
+    transform: scale(1.1);
+}
+
+.deleteIcon:active {
+    transform: scale(0.9);
+}
+
+
+/*
+======================================================
+--- Медиа-запросы для мобильных устройств ---
+======================================================
+*/
+@media (max-width: 600px) {
+    .container {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .form button {
+        width: 100%;
+    }
+
+    .taskItem {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .taskContent .title {
+        font-size: 1.1em;
+    }
+
+    .taskContent .description {
+        font-size: 0.9em;
+    }
+
+    .iconButton,
+    .iconButton svg {
+        font-size: 22px !important;
+    }
+}

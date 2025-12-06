@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  margin: 25px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: violet;
+}
+
+.container span {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  min-width: 30px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+}
+
+div > img {
+  max-width: 100%;
+}
+
+.btn_color_change  button{
+  padding: 10px;
+  margin: 10px;
+}

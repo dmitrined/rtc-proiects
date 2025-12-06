@@ -23,6 +23,26 @@ export default function NavBar(): JSX.Element {
   };
 
   const projects = [
+    { name: "Alcohol", to: "alcohol" },
+    { name: "Anecdotes", to: "anecdotes" },
+    { name: "CardProfile", to: "cardProfile" },
+    { name: "CardSecurityCheck", to: "cardSecurityCheck" },
+    { name: "ContactForm", to: "contactForm" },
+    { name: "DishApp", to: "dishApp" },
+    { name: "DogsImage", to: "dogsImage" },
+    { name: "Feedback", to: "feedback" },
+    { name: "Movies", to: "movies" },
+    { name: "SandwichRedux", to: "sandwichRedux" },
+
+
+
+
+
+
+
+
+
+    
     { name: "ProductsList", to: "productsList" },
     { name: "UsersList", to: "usersList" },
     { name: "Counter", to: "counter" },
