@@ -37,9 +37,10 @@ export default function NavBar(): JSX.Element {
     { name: "TodoList", to: "todoList" },
     { name: "ProductsList", to: "productsList" },
     { name: "UsersList", to: "usersList" },
-    { name: "Counter", to: "counter" },
+    { name: "Counter", to: "counter" }, 
     { name: "WeatherApp", to: "weatherApp" },
     { name: "CryptoWallet", to: "cryptoWallet" },
+    { name: "ChristmasCountdown", to: "christmasCountdown" },
 
   ];
 

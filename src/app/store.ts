@@ -20,11 +20,12 @@ import languageReducer from "../features/language/languageSlice";
 import { usersApi } from "../features/users/usersApi";
 import { weatherApi } from "../features/weather/weatherApi";
 import { cryptoApi } from "../features/cryptoWallet/cryptoApi";
+import { christmasApi } from "../features/christmas-countdown/christmasApi";
 import dishesReducer from '../features/reactStart/dishes/dishesSlice';
 import moviesReducer from '../features/reactStart/Films/Movies/moviesSlice';
 import sandwichesReducer from '../features/reactStart/sandwichRedux/sandwichSlice';
 import tasksReducer from '../features/reactStart/tasks/TasksReduser';
-
+import { timerSlice } from "../features/christmas-countdown/timerSlice";
 // ---------- Объединяем все редьюсеры ----------
 const rootReducer = combineReducers({
     products: productsReducer,
@@ -38,13 +39,13 @@ const rootReducer = combineReducers({
     movies: moviesReducer,
     sandwiches: sandwichesReducer,
     tasks: tasksReducer,
-
-
+    timer: timerSlice.reducer,
 
     // RTK Query reducers
     [weatherApi.reducerPath]: weatherApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [cryptoApi.reducerPath]: cryptoApi.reducer,
+    [christmasApi.reducerPath]: christmasApi.reducer,
 });
 
 // ---------- Настройки persist ----------
@@ -70,7 +71,7 @@ export const store = configureStore({
                 // Игнорируем redux-persist actions
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }).concat(weatherApi.middleware, usersApi.middleware, cryptoApi.middleware) as any,
+        }).concat(weatherApi.middleware, usersApi.middleware, cryptoApi.middleware, christmasApi.middleware) as any,
 });
 
 // ---------- Создаём persistor ----------

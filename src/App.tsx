@@ -23,6 +23,7 @@ import MoviesApp from './features/reactStart/Films/Movies/MoviesApp'
 import SandwichRedux from './features/reactStart/sandwichRedux/SandwichRedux'
 import ToDoRedux from './features/reactStart/tasks/ToDoRedux'
 import TodoList from './features/reactStart/TodoList/TodoList'
+import { Countdown } from './features/christmas-countdown/Countdown'
 
 export default function App(): JSX.Element {
   const mode = useAppSelector((state) => state.theme.mode);
@@ -63,6 +64,7 @@ export default function App(): JSX.Element {
         <Route path="counter" element={<ProtectedRoute outlet={<Counter />} />} />
         <Route path="weatherApp" element={<ProtectedRoute outlet={<Weather />} />} />
         <Route path="cryptoWallet" element={<ProtectedRoute outlet={<CryptoWallet />} />} />
+        <Route path="christmasCountdown" element={<ProtectedRoute outlet={<Countdown />} />} />  
 
 
 
