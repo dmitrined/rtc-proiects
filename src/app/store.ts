@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { configureStore, combineReducers, type ThunkDispatch, type UnknownAction } from "@reduxjs/toolkit";
 import {
     persistStore,
     persistReducer,
@@ -77,4 +77,5 @@ export const persistor = persistStore(store);
 // ---------- Типы для useSelector и useDispatch ----------
 // Определяем RootState из rootReducer ДО применения persist
 export type RootState = ReturnType<typeof rootReducer>;
-export type AppDispatch = typeof store.dispatch;
+// Явно определяем AppDispatch с поддержкой thunk
+export type AppDispatch = ThunkDispatch<RootState, undefined, UnknownAction>;
