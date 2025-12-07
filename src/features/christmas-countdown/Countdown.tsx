@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useGetTimeLeftQuery, type TimeLeft } from "./christmasApi"
 import { useDispatch } from "react-redux";
 import { setLastData } from "./timerSlice";
+import GitHubLink from "../gitHubLink/GitHubLink";
 // 1. Функция нормализации данных
 function normalize(t: TimeLeft) {
     return {
@@ -80,6 +81,8 @@ export function Countdown() {
             🎄 До Рождества осталось:
             <br />
             {time.days} дн. {time.hours} ч. {time.minutes} мин. {time.seconds} сек.
+            <GitHubLink href="https://github.com/dmitrined/rtc-proiects/tree/main/src/features/christmas-countdown"/>
         </div>
+        
     );
 }

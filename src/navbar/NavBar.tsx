@@ -23,24 +23,24 @@ export default function NavBar(): JSX.Element {
   };
 
   const projects = [
-    { name: "Alcohol", to: "alcohol" },
-    { name: "Anecdotes", to: "anecdotes" },
-    { name: "CardProfile", to: "cardProfile" },
-    { name: "CardSecurityCheck", to: "cardSecurityCheck" },
-    { name: "ContactForm", to: "contactForm" },
-    { name: "DishApp", to: "dishApp" },
-    { name: "DogsImage", to: "dogsImage" },
-    { name: "Feedback", to: "feedback" },
-    { name: "Movies", to: "movies" },
-    { name: "SandwichRedux", to: "sandwichRedux" },
-    { name: "ToDoRedux", to: "toDoRedux" },
-    { name: "TodoList", to: "todoList" },
-    { name: "ProductsList", to: "productsList" },
-    { name: "UsersList", to: "usersList" },
-    { name: "Counter", to: "counter" }, 
-    { name: "WeatherApp", to: "weatherApp" },
-    { name: "CryptoWallet", to: "cryptoWallet" },
-    { name: "ChristmasCountdown", to: "christmasCountdown" },
+    { name: "1.Alcohol", to: "alcohol" },
+    { name: "2.Anecdotes", to: "anecdotes" },
+    { name: "3.CardProfile", to: "cardProfile" },
+    { name: "4.CardSecurityCheck", to: "cardSecurityCheck" },
+    { name: "5.ContactForm", to: "contactForm" },
+    { name: "6.DishApp", to: "dishApp" },
+    { name: "7.DogsImage", to: "dogsImage" },
+    { name: "8.Feedback", to: "feedback" },
+    { name: "9.Movies", to: "movies" },
+    { name: "10.SandwichRedux", to: "sandwichRedux" },
+    { name: "11.ToDoRedux", to: "toDoRedux" },
+    { name: "12.TodoList", to: "todoList" },
+    { name: "13.ProductsList", to: "productsList" },
+    { name: "14.UsersList", to: "usersList" },
+    { name: "15.Counter", to: "counter" },
+    { name: "16.WeatherApp", to: "weatherApp" },
+    { name: "17.CryptoWallet", to: "cryptoWallet" },
+    { name: "18.ChristmasCountdown", to: "christmasCountdown" },
 
   ];
 
@@ -84,7 +84,7 @@ export default function NavBar(): JSX.Element {
             <MenuItem value="de">DE</MenuItem>
           </Select>
 
-         
+
 
           {user?.username ? (
             <div className="flex items-center space-x-4">
@@ -106,17 +106,24 @@ export default function NavBar(): JSX.Element {
 
                 {isProjectsOpen && (
                   <ul
-                    className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-xl z-10 list-none p-0"
+                    className="
+                      fixed inset-0 top-[60px] z-40 bg-white dark:bg-gray-800 
+                      flex flex-col gap-1 p-4 overflow-y-auto
+                      md:absolute md:inset-auto md:top-full md:right-0 md:mt-2 md:w-56 md:max-h-[80vh]
+                      md:bg-white md:dark:bg-gray-700 md:border md:border-gray-200 md:dark:border-gray-600 
+                      md:rounded-lg md:shadow-xl md:p-0
+                    "
                   >
+
                     {projects.map((project) => (
                       <li
                         key={project.name}
-                        className="block text-sm"
+                        className="block"
                       >
                         <NavLink
                           to={project.to}
                           className={({ isActive }) =>
-                            `block px-4 py-2 text-sm transition duration-150 ${isActive
+                            `block px-4 py-3 md:py-2 text-base md:text-sm rounded-md transition duration-150 ${isActive
                               ? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 font-semibold"
                               : "text-gray-700 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-600 hover:text-blue-600 dark:hover:text-blue-300"
                             }`
